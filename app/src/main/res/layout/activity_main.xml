@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar_bg"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@drawable/toolbar_bg"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/location"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/hsv1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_delivery"
+                style="@style/label"
+                android:layout_width="103dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/delivery"
+                android:textAppearance="@style/label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_pickup"
+                style="@style/label_not_bgr"
+                android:layout_width="78dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="@string/pickup"
+                app:layout_constraintStart_toEndOf="@+id/tv_delivery"
+                app:layout_constraintTop_toTopOf="@id/tv_delivery" />
+
+            <TextView
+                android:id="@+id/tv_catering"
+                style="@style/label_not_bgr"
+                android:layout_width="90dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="@string/catering"
+                app:layout_constraintStart_toEndOf="@+id/tv_pickup"
+                app:layout_constraintTop_toTopOf="@id/tv_pickup" />
+
+            <TextView
+                android:id="@+id/tv_curbside"
+                style="@style/label_not_bgr"
+                android:layout_width="92dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="11dp"
+                android:gravity="center"
+                android:text="@string/curbside"
+                android:textAppearance="@style/label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_catering"
+                app:layout_constraintTop_toTopOf="@id/tv_catering" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+    <SearchView
+        android:id="@+id/search_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hsv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:queryHint="@string/search_view"
+        style="@style/search_view"
+        android:background="@color/white"
+        tools:layout_editor_absoluteY="113dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/hsv2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/label_takeaway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/label_takeaway"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/label_grocery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/label_grocery"
+                app:layout_constraintStart_toEndOf="@id/label_takeaway"
+                app:layout_constraintTop_toTopOf="@+id/label_takeaway" />
+
+            <ImageView
+                android:id="@+id/label_convenience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/label_convenience"
+                app:layout_constraintStart_toEndOf="@id/label_grocery"
+                app:layout_constraintTop_toTopOf="@+id/label_grocery" />
+
+            <ImageView
+                android:id="@+id/label_pharmacy"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/label_pharmacy"
+                app:layout_constraintStart_toEndOf="@id/label_convenience"
+                app:layout_constraintTop_toTopOf="@+id/label_convenience" />
+
+            <TextView
+                android:id="@+id/tv_takeaways"
+                style="@style/label_scrollview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/rubik"
+                android:text="@string/takeaways"
+                app:layout_constraintEnd_toEndOf="@id/label_takeaway"
+                app:layout_constraintStart_toStartOf="@id/label_takeaway"
+                app:layout_constraintTop_toBottomOf="@id/label_takeaway" />
+
+            <TextView
+                android:id="@+id/tv_grocery"
+                style="@style/label_scrollview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/rubik"
+                android:text="@string/grocery"
+                app:layout_constraintEnd_toEndOf="@id/label_grocery"
+                app:layout_constraintStart_toStartOf="@id/label_grocery"
+                app:layout_constraintTop_toBottomOf="@id/label_grocery" />
+
+            <TextView
+                android:id="@+id/tv_convenience"
+                style="@style/label_scrollview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/rubik"
+                android:text="@string/convenience"
+                app:layout_constraintEnd_toEndOf="@id/label_convenience"
+                app:layout_constraintStart_toStartOf="@id/label_convenience"
+                app:layout_constraintTop_toBottomOf="@id/label_convenience" />
+
+            <TextView
+                android:id="@+id/tv_pharmacy"
+                style="@style/label_scrollview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/rubik"
+                android:text="@string/pharmacy"
+                app:layout_constraintEnd_toEndOf="@id/label_pharmacy"
+                app:layout_constraintStart_toStartOf="@id/label_pharmacy"
+                app:layout_constraintTop_toBottomOf="@id/label_pharmacy" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/id_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:text="@string/id_store"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintBaseline_toBaselineOf="@+id/store_open"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/store_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/stores_open"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/id_store"
+        app:layout_constraintTop_toBottomOf="@id/hsv2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_store"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:itemIconTint="@drawable/bottom_nav_selector"
+        app:itemTextColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
